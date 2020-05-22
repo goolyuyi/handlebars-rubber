@@ -1,10 +1,15 @@
 const loader = require('../index');
-
+const handlebars = require('handlebars');
 (async () => {
+        let rubber = new loader(handlebars);
+        await Promise.all([
+            rubber.loadHelpers(['helpers']),
+            rubber.loadPartials(['partials']),
+            rubber.loadJsonData(['blocks', 'confs', 'params.js']),
+            rubber.loadJsonData("package.json", "../")
+        ]);
 
-        await loader.loadHelpers(['./helpers']);
-        await loader.loadPartials(['./partials']);
-        let test = await loader.loadConfs(['./blocks', './confs', './params.js', '../package.json']);
-        console.log(test);
+        console.log(rubber.handlebars);
+        console.log(rubber.data);
     }
 )();
