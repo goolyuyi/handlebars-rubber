@@ -1,11 +1,11 @@
 {
-  "name": "handlebars-dir-import",
+  "name": "handlebars-rubber",
   "description": "util tools for load handlebars helpers, partials and contexts",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "engines": {
-    "node": ">=13.0.0"
+    "node": ">=10.0.0"
   },
   "dependencies": {
     "globby": "^11.0.0",
